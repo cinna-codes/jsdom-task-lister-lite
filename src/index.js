@@ -1,10 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // document.querySelector("#id-checkbox").addEventListener("click", function(event) {
-  //     document.getElementById("output-box").innerHTML += "Sorry! <code>preventDefault()</code> won't let you check this!<br>";
-  //     event.preventDefault();
-  // }, false);
-  document.querySelector("input[type=submit]").addEventListener("click", function(event) {
-    event.preventDefault;
-  })
+  const createTaskForm = document.getElementById("create-task-form")
+  const taskList = document.getElementById("tasks")
+  const newTaskDesc = document.getElementById("new-task-description")
+
+  createTaskForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    let listItem = document.createElement("li");
+    listItem.textContent = newTaskDesc.value;
+    taskList.appendChild(listItem);
+  });
 });
